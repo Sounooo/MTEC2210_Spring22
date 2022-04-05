@@ -18,4 +18,14 @@ public class Car : MonoBehaviour
         Vector3 vel = dir * speed * Time.deltaTime;
         transform.Translate(vel);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        
+   
+}
 }

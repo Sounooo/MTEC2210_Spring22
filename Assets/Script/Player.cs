@@ -21,4 +21,12 @@ public class Player : MonoBehaviour
 
         transform.Translate(xMovement, yMovement, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Car")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
